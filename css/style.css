@@ -7,15 +7,23 @@
 
 :root{
 
---bg:#FCF8F5;
---surface:#FFFFFF;
---text:#202020;
---muted:#6F6A67;
---accent:#DCCFC7;
---line:#ECE4DE;
---button:#202020;
+--bg:#FBF7F4;
+--surface:#FFFDFB;
 
---radius:24px;
+--text:#2A2522;
+--muted:#756C67;
+
+--blush:#EAD9D4;
+--sage:#AAB59D;
+
+--line:#E9E1DB;
+
+--button:#463731;
+--button-hover:#7E8F73;
+
+--shadow:0 18px 45px rgba(60,40,30,.07);
+
+--radius:28px;
 
 }
 
