@@ -1,4 +1,23 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap');
+/* =======================================================
+   KIND & YUM
+   Part 1
+======================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@300;400;500;600;700&display=swap');
+
+:root{
+
+--bg:#FCF8F5;
+--surface:#FFFFFF;
+--text:#202020;
+--muted:#6F6A67;
+--accent:#DCCFC7;
+--line:#ECE4DE;
+--button:#202020;
+
+--radius:24px;
+
+}
 
 *{
 margin:0;
@@ -7,24 +26,113 @@ box-sizing:border-box;
 }
 
 html{
+
 scroll-behavior:smooth;
+
 }
 
 body{
 
-background:#FCF9F5;
+background:linear-gradient(
+180deg,
+#FFFDFC 0%,
+#FCF8F5 45%,
+#FFFDFC 100%
+);
 
-font-family:'Poppins',sans-serif;
+font-family:'Manrope',sans-serif;
 
-color:#222;
+color:var(--text);
+
+line-height:1.7;
+
+overflow-x:hidden;
 
 }
 
-/* ---------- NAVBAR ---------- */
+img{
+
+display:block;
+
+max-width:100%;
+
+}
+
+a{
+
+text-decoration:none;
+
+color:inherit;
+
+}
+
+section{
+
+padding:120px 8%;
+
+}
+
+/* =======================================================
+TYPOGRAPHY
+======================================================= */
+
+h1,h2,h3,h4{
+
+font-family:'Cormorant Garamond',serif;
+
+font-weight:600;
+
+letter-spacing:-.5px;
+
+}
+
+h1{
+
+font-size:clamp(3.6rem,8vw,6rem);
+
+line-height:1;
+
+margin-bottom:28px;
+
+}
+
+h2{
+
+font-size:clamp(2.5rem,5vw,4rem);
+
+margin-bottom:20px;
+
+}
+
+p{
+
+color:var(--muted);
+
+font-size:1.05rem;
+
+}
+
+.eyebrow{
+
+font-size:.8rem;
+
+letter-spacing:5px;
+
+text-transform:uppercase;
+
+color:#7E7069;
+
+margin-bottom:18px;
+
+font-weight:600;
+
+}
+
+/* =======================================================
+NAVBAR
+======================================================= */
 
 header{
-
-width:100%;
 
 position:fixed;
 
@@ -32,23 +140,25 @@ top:0;
 
 left:0;
 
-z-index:1000;
+width:100%;
 
-backdrop-filter:blur(18px);
+z-index:999;
 
-background:rgba(252,249,245,.75);
+background:rgba(252,248,245,.82);
 
-border-bottom:1px solid #ece4dd;
+backdrop-filter:blur(20px);
+
+border-bottom:1px solid var(--line);
 
 }
 
-nav{
-
-width:90%;
-
-margin:auto;
+.navbar{
 
 height:90px;
+
+width:min(1300px,92%);
+
+margin:auto;
 
 display:flex;
 
@@ -58,47 +168,123 @@ justify-content:space-between;
 
 }
 
-.logo img{
+.brand{
 
-height:62px;
+display:flex;
+
+align-items:center;
+
+gap:18px;
 
 }
 
-nav ul{
+.brand img{
+
+width:60px;
+
+height:60px;
+
+object-fit:contain;
+
+}
+
+.brand-text h2{
+
+font-size:1.5rem;
+
+margin:0;
+
+}
+
+.brand-text span{
+
+font-size:.78rem;
+
+letter-spacing:2px;
+
+text-transform:uppercase;
+
+color:#8a7d76;
+
+}
+
+.nav-links{
 
 display:flex;
 
 list-style:none;
 
-gap:45px;
+gap:42px;
 
 }
 
-nav a{
+.nav-links a{
 
-text-decoration:none;
-
-color:#222;
+font-size:.95rem;
 
 font-weight:500;
 
-transition:.3s;
+transition:.35s;
+
+position:relative;
 
 }
 
-nav a:hover{
+.nav-links a::after{
 
-color:#8c6758;
+content:"";
+
+position:absolute;
+
+left:0;
+
+bottom:-8px;
+
+width:0;
+
+height:2px;
+
+background:#bca89c;
+
+transition:.35s;
 
 }
 
-/* ---------- HERO ---------- */
+.nav-links a:hover::after{
+
+width:100%;
+
+}
+
+.order-button{
+
+background:#222;
+
+color:white;
+
+padding:14px 28px;
+
+border-radius:999px;
+
+transition:.35s;
+
+font-weight:600;
+
+}
+
+.order-button:hover{
+
+background:#9D8679;
+
+transform:translateY(-2px);
+
+}
+
+/* =======================================================
+HERO
+======================================================= */
 
 .hero{
-
-width:90%;
-
-margin:auto;
 
 min-height:100vh;
 
@@ -108,103 +294,145 @@ grid-template-columns:1fr 1fr;
 
 align-items:center;
 
-gap:50px;
+gap:60px;
 
-padding-top:90px;
-
-}
-
-.left{
-
-max-width:560px;
+padding-top:180px;
 
 }
 
-.tag{
+.hero-content{
 
-letter-spacing:5px;
-
-text-transform:uppercase;
-
-font-size:.85rem;
-
-color:#8c6758;
-
-margin-bottom:20px;
+max-width:580px;
 
 }
 
-.left h1{
+.hero-content p{
 
-font-family:'Playfair Display',serif;
+margin-bottom:35px;
 
-font-size:72px;
-
-line-height:1.08;
-
-margin-bottom:25px;
+font-size:1.1rem;
 
 }
 
-.left p{
+.hero-actions{
 
-font-size:19px;
+display:flex;
 
-line-height:1.8;
+gap:18px;
 
-color:#666;
-
-margin-bottom:40px;
+margin-top:45px;
 
 }
 
-.left a{
-
-display:inline-block;
-
-padding:18px 38px;
+.primary-btn{
 
 background:#222;
 
 color:white;
 
-text-decoration:none;
+padding:18px 34px;
 
-border-radius:60px;
+border-radius:999px;
+
+font-weight:600;
 
 transition:.35s;
 
 }
 
-.left a:hover{
+.primary-btn:hover{
 
-background:#8c6758;
+background:#A48E81;
 
 transform:translateY(-4px);
 
 }
 
-.right{
+.secondary-btn{
+
+border:1px solid #DDD2CB;
+
+padding:18px 34px;
+
+border-radius:999px;
+
+transition:.35s;
+
+}
+
+.secondary-btn:hover{
+
+background:white;
+
+}
+
+.hero-image{
 
 display:flex;
 
 justify-content:center;
 
-}
-
-.right img{
-
-width:100%;
-
-max-width:600px;
-
-animation:float 5s ease-in-out infinite;
-
-filter:drop-shadow(0 30px 60px rgba(0,0,0,.18));
+align-items:center;
 
 }
 
-/* ---------- FLOAT ---------- */
+.hero-image img{
+
+max-width:620px;
+
+filter:drop-shadow(0 35px 60px rgba(0,0,0,.16));
+
+animation:float 6s ease-in-out infinite;
+
+}
+
+/* =======================================================
+SECTION HEADINGS
+======================================================= */
+
+.section-header{
+
+text-align:center;
+
+margin-bottom:70px;
+
+}
+
+.section-header p{
+
+letter-spacing:4px;
+
+text-transform:uppercase;
+
+font-size:.8rem;
+
+margin-bottom:12px;
+
+color:#8a7d76;
+
+}
+
+.section-header h2{
+
+margin-bottom:0;
+
+}
+
+/* =======================================================
+BUTTONS
+======================================================= */
+
+button{
+
+cursor:pointer;
+
+font-family:inherit;
+
+}
+
+/* =======================================================
+FLOAT
+======================================================= */
 
 @keyframes float{
 
@@ -216,7 +444,7 @@ transform:translateY(0px);
 
 50%{
 
-transform:translateY(-14px);
+transform:translateY(-16px);
 
 }
 
@@ -228,11 +456,13 @@ transform:translateY(0px);
 
 }
 
-/* ---------- MOBILE ---------- */
+/* =======================================================
+RESPONSIVE
+======================================================= */
 
-@media(max-width:950px){
+@media(max-width:980px){
 
-nav ul{
+.nav-links{
 
 display:none;
 
@@ -244,29 +474,31 @@ grid-template-columns:1fr;
 
 text-align:center;
 
-padding-top:140px;
+padding-top:150px;
 
 }
 
-.left{
+.hero-content{
 
 margin:auto;
 
 }
 
-.left h1{
+.hero-actions{
 
-font-size:52px;
+justify-content:center;
 
-}
-
-.right{
-
-margin-top:40px;
+flex-wrap:wrap;
 
 }
 
-.right img{
+.hero-image{
+
+margin-top:60px;
+
+}
+
+.hero-image img{
 
 max-width:420px;
 
