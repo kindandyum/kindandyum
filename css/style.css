@@ -41,11 +41,12 @@ scroll-behavior:smooth;
 
 body{
 
-background:linear-gradient(
+background:
+linear-gradient(
 180deg,
 #FFFDFC 0%,
-#FCF8F5 45%,
-#FFFDFC 100%
+#FBF7F4 55%,
+#F8F2EE 100%
 );
 
 font-family:'Manrope',sans-serif;
