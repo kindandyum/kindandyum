@@ -153,9 +153,9 @@ width:100%;
 
 z-index:999;
 
-background:rgba(252,248,245,.82);
+background:rgba(255,252,249,.88);
 
-backdrop-filter:blur(20px);
+backdrop-filter:blur(30px);
 
 border-bottom:1px solid var(--line);
 
